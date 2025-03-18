@@ -4,7 +4,7 @@
 40 PRINT"Your magical senses have drawn you to the vicinity of humanity's last city":PRINT"because of a warning. If not rescued very soon, the last of human technology":PRINT"will be erased from the planet.":for i=1 to 10000:next
 50 DEFINT A-Z:DIM D$(6),PLACE$(27),PLACE(27,6),OB$(35),OB(35),VERB$(45),NOUN$(66):Q$=CHR$(34):OFFSET=1:FOR X=1 TO 6:READ D$(X):NEXT
 60 FOR X=1 TO 27:READ PLACE$(X):FOR Y=1 TO 6:READ PLACE(X,Y):NEXT Y,X:FOR X=1 TO 35:READ OB$(X),OB(X):NEXT:FOR X=1 TO 45:READ VERB$(X):NEXT:FOR X=1 TO 66:READ NOUN$(X):NEXT:TR=300:CP=1:cls
-70 loacete 35,25:print"Any key":call &bb18:cls:LOCATE 1,1:IF (CP=8 OR CP=9 OR CP=10 OR CP=22 OR CP=23) AND OB(35)<28 AND OB(35)<>CP THEN PRINT"It's too dark to see!":GOTO 150 ELSE IF CP=13 OR CP>14 AND CP<20 OR CP=21 THEN OB(13)=CP
+70 LOCATE 35,25:print"Any key":call &bb18:cls:LOCATE 1,1:IF (CP=8 OR CP=9 OR CP=10 OR CP=22 OR CP=23) AND OB(35)<28 AND OB(35)<>CP THEN PRINT"It's too dark to see!":GOTO 150 ELSE IF CP=13 OR CP>14 AND CP<20 OR CP=21 THEN OB(13)=CP
 80 IF LEFT$(PLACE$(CP),1)="*" THEN PRINT MID$(PLACE$(CP),2); ELSE PRINT"You are in "+PLACE$(CP);
 90 PRINT".";:Y=1:FOR X=1 TO 35:IF OB(X)<>CP THEN 120 ELSE IF Y THEN PRINT" Visible items:":PRINT:Y=0
 100 IF POS(#0)+LEN(OB$(X))>78 THEN PRINT
